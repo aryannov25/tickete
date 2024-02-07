@@ -3,7 +3,6 @@ import { useState } from "react";
 const Main = () => {
   const [isPaymentSummaryVisible, setIsPaymentSummaryVisible] = useState(false);
 
-  // Function to toggle the payment summary visibility
   const togglePaymentSummary = () => {
     setIsPaymentSummaryVisible(!isPaymentSummaryVisible);
   };
@@ -201,34 +200,10 @@ const Main = () => {
                     src="/credit-debit-card1@2x.png"
                   />
                 </div>
-                <div className="w-[352px] my-0 mx-[!important] absolute bottom-[0px] left-[calc(50%_-_176px)] flex flex-row items-start justify-center pt-0 px-spacing-sp-12 pb-spacing-sp-16 box-border z-[2]">
-                  <div className="flex flex-row items-center justify-start gap-[6px]">
-                    <div className="flex flex-row items-start justify-start">
-                      <div className="h-1.5 w-1.5 relative rounded-[50%] bg-whitesmoke-300 [backdrop-filter:blur(37.5px)]" />
-                    </div>
-                    <div className="flex flex-row items-start justify-start">
-                      <div className="h-2 w-2 relative rounded-[50%] bg-whitesmoke-300 [backdrop-filter:blur(50px)]" />
-                    </div>
-                    <div className="flex flex-row items-start justify-start">
-                      <div className="h-2 w-2 relative rounded-[50%] bg-whitesmoke-300 [backdrop-filter:blur(50px)]" />
-                    </div>
-                    <div className="flex flex-row items-start justify-start">
-                      <div className="h-2 w-7 relative rounded-radii-r-8 bg-grey-light-c-l-grey-05" />
-                    </div>
-                    <div className="flex flex-row items-start justify-start">
-                      <div className="h-2 w-2 relative rounded-[50%] bg-whitesmoke-300 [backdrop-filter:blur(50px)]" />
-                    </div>
-                    <div className="flex flex-row items-start justify-start">
-                      <div className="h-2 w-2 relative rounded-[50%] bg-whitesmoke-300 [backdrop-filter:blur(50px)]" />
-                    </div>
-                    <div className="flex flex-row items-start justify-start">
-                      <div className="h-1.5 w-1.5 relative rounded-[50%] bg-whitesmoke-300 [backdrop-filter:blur(37.5px)]" />
-                    </div>
-                  </div>
-                </div>
+
                 <div className="self-stretch flex flex-col items-start justify-start gap-[45px] mq450:gap-[45px]">
                   <div className="flex flex-row items-start justify-start py-0 px-3">
-                    <button className="cursor-pointer [border:none] p-0 bg-[transparent] flex flex-row items-center justify-center z-[2]">
+                    <button className="cursor-pointer [border:none] p-0 bg-[white] flex flex-row items-center justify-center z-[2]">
                       <div className="rounded-radii-r-4 bg-brand-ghost-white flex flex-row items-center justify-start py-spacing-sp-4 px-spacing-sp-8 gap-[4px]">
                         <img
                           className="h-3.5 w-3.5 relative"
@@ -242,14 +217,14 @@ const Main = () => {
                     </button>
                   </div>
                   <div className="self-stretch flex flex-row items-start justify-between py-0 px-spacing-sp-12 gap-[20px] z-[2] mq450:flex-wrap">
-                    <div className="h-8 w-8 rounded-radii-r-circle bg-whitesmoke-400 [backdrop-filter:blur(50px)] flex flex-row items-start justify-start p-2 box-border">
+                    <div className="h-8 w-8 rounded-radii-r-circle bg-white [backdrop-filter:blur(50px)] flex flex-row items-start justify-start p-2 box-border">
                       <img
                         className="h-4 w-4 relative"
                         alt=""
                         src="/caretleft.svg"
                       />
                     </div>
-                    <div className="h-8 w-8 rounded-radii-r-circle bg-whitesmoke-400 [backdrop-filter:blur(50px)] flex flex-row items-start justify-start p-2 box-border">
+                    <div className="h-8 w-8 rounded-radii-r-circle bg-white [backdrop-filter:blur(50px)] flex flex-row items-start justify-start p-2 box-border">
                       <img
                         className="h-4 w-4 relative"
                         alt=""

@@ -36,12 +36,12 @@ const Accordion = () => {
   ];
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto ml-8">
       <div className="space-y-4">
         {questions.map((question, index) => (
           <div
             key={index}
-            className="rounded-2xl border border-grayscale-g7 px-2"
+            className="rounded-2xl border border-grayscale-g7 px-5"
           >
             <button
               onClick={() => toggleItem(index)}
@@ -51,10 +51,12 @@ const Accordion = () => {
                   : "bg-white rounded-2xl"
               } focus:outline-none`}
             >
-              <h3 className="text-black font-medium">{question.title}</h3>
-              <span className="text-lg font-semibold">
+              <span className="flex-grow-0 text-lg font-semibold">
                 {openItem === index ? "−" : "+"}
               </span>
+              <h3 className="flex-grow text-black text-left font-medium pl-4">
+                {question.title}
+              </h3>
             </button>
             {openItem === index && (
               <div className={`px-5 pt-2 pb-4 bg-white rounded-b-2xl `}>
