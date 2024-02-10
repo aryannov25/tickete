@@ -139,7 +139,7 @@ const Main = () => {
                   <div className="self-stretch  rounded-radii-r-16 bg-brand-ghost-white overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] border-[1px] border-solid border-colors-border-c-border-grey-default mq450:flex-wrap">
                     {!isFocused2 && inputValue2 === "" && (
                       <span className="absolute  text-colors-text-c-text-grey-tertiary1">
-                        Select an option <span className="text-red-500">*</span>
+                        Country Code <span className="text-red-500">*</span>
                       </span>
                     )}
                     <select

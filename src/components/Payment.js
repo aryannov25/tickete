@@ -1,4 +1,27 @@
+import { useState } from "react";
+
 const Payment = () => {
+  const [inputValue1, setInputValue1] = useState("");
+  const [inputValue2, setInputValue2] = useState("");
+  const [inputValue3, setInputValue3] = useState("");
+  const [inputValue4, setInputValue4] = useState("");
+
+  const handleInput1 = (e) => {
+    setInputValue1(e.target.value);
+  };
+
+  const handleInput2 = (e) => {
+    setInputValue2(e.target.value);
+  };
+
+  const handleInput3 = (e) => {
+    setInputValue3(e.target.value);
+  };
+
+  const handleInput4 = (e) => {
+    setInputValue4(e.target.value);
+  };
+
   return (
     <section className="w-[1240px] flex flex-row items-start justify-start py-0 px-5 box-border max-w-full">
       <form className="m-0 w-[792px] flex flex-col items-start justify-start max-w-full">
@@ -50,48 +73,71 @@ const Payment = () => {
               />
             </div>
             <div className="self-stretch flex flex-col items-start justify-start py-0 px-[23px] box-border gap-[28px] max-w-full">
-              <div className="self-stretch flex flex-row flex-wrap items-start justify-start gap-[24px] max-w-full">
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[234px] max-w-full">
-                  <div className="self-stretch h-14 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden shrink-0 flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
-                    <div className="self-stretch flex-1 flex flex-row items-center justify-start gap-[4px] max-w-full">
-                      <input
-                        className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="Name on card *"
-                        required
-                      />
-                    </div>
+              <div className="self-stretch flex flex-row items-start justify-start gap-[24px] max-w-full mq825:flex-wrap">
+                <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue1 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        Name on card <span className="text-red-500">*</span>
+                      </span>
+                    )}
+                    <input
+                      type="text"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none pl-4`}
+                      value={inputValue1}
+                      onChange={handleInput1}
+                      required
+                    />
                   </div>
                 </div>
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[234px] max-w-full">
-                  <div className="self-stretch rounded-radii-r-16 bg-brand-ghost-white overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] border-[1px] border-solid border-colors-border-c-border-grey-default mq450:flex-wrap">
-                    <div className="flex-1 flex flex-row items-center justify-start gap-[4px] min-w-[108px] min-h-[24px]">
-                      <input
-                        className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="Card number *"
-                      />
-                    </div>
+                <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue2 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        Card number <span className="text-red-500">*</span>
+                      </span>
+                    )}
+                    <input
+                      type="text"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none pl-4`}
+                      value={inputValue2}
+                      onChange={handleInput2}
+                      required
+                    />
                   </div>
                 </div>
               </div>
-              <div className="self-stretch flex flex-row flex-wrap items-start justify-start gap-[24px] max-w-full">
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[234px] max-w-full">
-                  <div className="self-stretch h-14 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden shrink-0 flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
-                    <div className="self-stretch flex-1 flex flex-row items-center justify-start gap-[4px] max-w-full">
-                      <input
-                        className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="Expiry date (MM/YY) *"
-                      />
-                    </div>
+              <div className="self-stretch flex flex-row items-start justify-start gap-[24px] max-w-full mq825:flex-wrap">
+                <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue3 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        Expiry date <span className="text-red-500">*</span>
+                      </span>
+                    )}
+                    <input
+                      type="text"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none pl-4`}
+                      value={inputValue3}
+                      onChange={handleInput3}
+                      required
+                    />
                   </div>
                 </div>
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[234px] max-w-full">
-                  <div className="self-stretch h-14 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden shrink-0 flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
-                    <div className="self-stretch flex-1 flex flex-row items-center justify-start gap-[4px] max-w-full">
-                      <input
-                        className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="CVV/CVC *"
-                      />
-                    </div>
+                <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue4 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        {`<CVV/CVC>`} <span className="text-red-500">*</span>
+                      </span>
+                    )}
+                    <input
+                      type="text"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none pl-4`}
+                      value={inputValue4}
+                      onChange={handleInput4}
+                      required
+                    />
                   </div>
                 </div>
               </div>
