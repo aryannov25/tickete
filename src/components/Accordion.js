@@ -36,35 +36,38 @@ const Accordion = () => {
   ];
 
   return (
-    <div className="container mx-auto ml-8">
-      <div className="space-y-4 px-4">
-        {questions.map((question, index) => (
-          <div
-            key={index}
-            className="rounded-2xl border border-grayscale-g7 px-5 py-2"
-          >
-            <button
-              onClick={() => toggleItem(index)}
-              className={`flex items-center justify-between w-full px-5 py-3 text-left ${
-                openItem === index
-                  ? "bg-white rounded-t-2xl"
-                  : "bg-white rounded-2xl"
-              } focus:outline-none`}
+    <div className="flex-1 flex flex-col items-start justify-start gap-[10px] min-w-[473px] max-w-full mq825:min-w-full">
+      <div className="self-stretch flex flex-col items-start justify-start pt-spacing-sp-4 px-0 pb-spacing-sp-2 gap-[4px]">
+        {" "}
+        <div className="space-y-4 px-0">
+          {questions.map((question, index) => (
+            <div
+              key={index}
+              className="rounded-2xl lg:text-lg border border-grayscale-g7 lg:px-0 px-5 py-2"
             >
-              <span className="flex-grow-0 text-5xl  font-semibold">
-                {openItem === index ? "−" : "+"}
-              </span>
-              <h3 className="flex-grow text-black text-left font-medium pl-4 leading-[20px]">
-                {question.title}
-              </h3>
-            </button>
-            {openItem === index && (
-              <div className={`px-5 pt-2 pb-4 bg-white rounded-b-2xl mx-5`}>
-                <p className="text-gray text-base">{question.answer}</p>
-              </div>
-            )}
-          </div>
-        ))}
+              <button
+                onClick={() => toggleItem(index)}
+                className={`flex items-center justify-between w-full px-5 py-3 text-left ${
+                  openItem === index
+                    ? "bg-white rounded-t-2xl"
+                    : "bg-white rounded-2xl"
+                } focus:outline-none`}
+              >
+                <span className="flex-grow-0 text-5xl font-semibold">
+                  {openItem === index ? "−" : "+"}
+                </span>
+                <h3 className="flex-grow text-black text-left font-medium pl-4 leading-[29px]">
+                  {question.title}
+                </h3>
+              </button>
+              {openItem === index && (
+                <div className={`px-5 pt-2 pb-4 bg-white rounded-b-2xl mx-5`}>
+                  <p className="text-gray text-base">{question.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

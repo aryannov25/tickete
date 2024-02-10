@@ -17,3 +17,46 @@ input:focus,
 select:focus {
   outline: none;
 }
+
+@media (max-width: 768px) {
+  /* Adjust this breakpoint to your needs */
+  .responsive-card {
+    width: 100%;
+    min-width: 0; /* Allows the card to resize on smaller screens */
+    height: auto;
+
+    /* Stacks elements vertically */
+  }
+
+  .responsive-card img {
+    width: 50%; /* Allows the image to fill the card width */
+    max-width: 100%; /* Ensures the image does not exceed the card's width */
+    height: auto; /* Keeps the aspect ratio of the image */
+    order: 0;
+    margin-right: 30px; /* Positions the image above the text on mobile */
+  }
+
+  .responsive-card div {
+    /* Adjust text block styles for mobile if necessary */
+    max-width: 100%; /* Allows the text block to fill the card width */
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-top: 4rem; /* Adjust top padding on mobile */
+  }
+  .footer-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer-links a,
+  .footer-links span {
+    display: block; /* Stack links vertically on mobile */
+  }
+  .footer-links span {
+    display: none; /* Hide bullets on mobile */
+  }
+}
+
+

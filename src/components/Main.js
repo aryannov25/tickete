@@ -1,22 +1,89 @@
 import { useState } from "react";
 
 const Main = () => {
+  const [selectedValue, setSelectedValue] = useState("");
+  const [selectedValue1, setSelectedValue1] = useState("");
+  const [inputValue, setInputValue] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
+  const [isFocused1, setIsFocused1] = useState(false);
+  const [inputValue1, setInputValue1] = useState("");
+  const [inputValue2, setInputValue2] = useState("");
+  const [inputValue3, setInputValue3] = useState("");
+  const [inputValue4, setInputValue4] = useState("");
+  const [inputValue5, setInputValue5] = useState("");
+  const [isFocused2, setIsFocused2] = useState(false);
+
   const [isPaymentSummaryVisible, setIsPaymentSummaryVisible] = useState(false);
 
   const togglePaymentSummary = () => {
     setIsPaymentSummaryVisible(!isPaymentSummaryVisible);
   };
 
+  const handleInput = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleChange = (e) => {
+    setSelectedValue(e.target.value);
+    setIsFocused(false);
+  };
+
+  const handleChange1 = (e) => {
+    setSelectedValue1(e.target.value);
+    setIsFocused(false);
+  };
+
+  const handleFocus = () => {
+    setIsFocused(true);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+  };
+  const handleFocus1 = () => {
+    setIsFocused1(true);
+  };
+
+  const handleBlur1 = () => {
+    setIsFocused1(false);
+  };
+
+  const handleInput1 = (e) => {
+    setInputValue1(e.target.value);
+  };
+
+  const handleInput2 = (e) => {
+    setInputValue2(e.target.value);
+  };
+
+  const handleInput3 = (e) => {
+    setInputValue3(e.target.value);
+  };
+
+  const handleInput4 = (e) => {
+    setInputValue4(e.target.value);
+  };
+
+  const handleInput5 = (e) => {
+    setInputValue5(e.target.value);
+  };
+
+  const handleFocus2 = () => {
+    setIsFocused2(true);
+  };
+
+  const handleBlur2 = () => {
+    setIsFocused2(false);
+  };
+
+  const inputPaddingClass = isFocused1 || isFocused2 ? "pl-4" : "pl-4";
+
   return (
-    <section className="w-[1240px] flex flex-col items-start justify-start py-0 px-5 box-border gap-[32px] max-w-full text-left text-5xl text-colors-text-c-text-grey-primary font-label-regular-bold mq825:gap-[32px]">
+    <section className="w-[1240px]  flex flex-col lg:flex-row items-center lg:items-start justify-center  mx-auto  py-0 px-5 box-border gap-[32px] max-w-full text-left text-5xl text-colors-text-c-text-grey-primary font-label-regular-bold mq825:gap-[32px]">
       <div className="self-stretch flex flex-row items-start justify-start gap-[24px] max-w-full lg:flex-wrap">
-        <div className="flex-1 overflow-x-auto flex flex-col items-start justify-start gap-[64px] max-w-full mq450:gap-[64px] mq825:gap-[64px] mq825:min-w-full">
-          <div className="w-[792px] flex flex-col items-start justify-start gap-[32px] text-38xl font-heading-serif-xl">
-            <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-spacing-sp-28 box-border max-w-full">
-              <h1 className="m-0 flex-1 relative text-inherit tracking-[0.01em] leading-[64px] font-medium font-inherit inline-block max-w-full mq450:text-15xl mq450:leading-[38px] mq825:text-27xl mq825:leading-[51px]">{`Confirm & pay`}</h1>
-            </div>
+        <div className="order-1 lg:order-2 w-full lg:flex-1 overflow-x-auto flex flex-col items-start justify-start gap-[64px] max-w-full mq450:gap-[64px] mq825:gap-[64px] mq825:min-w-full">
+          <div className="w-[792px] max-w-full flex flex-col items-start justify-start gap-[32px] text-38xl font-heading-serif-xl">
             <div className="self-stretch rounded-radii-r-16 bg-grey-light-c-l-grey-05 box-border overflow-hidden flex flex-row items-start justify-start max-w-full text-sm font-label-regular-bold border-[1px] border-solid border-colors-border-c-border-grey-default-subtle">
-              <div className="h-32 w-1 relative bg-black hidden" />
               <div className="flex-1 flex flex-row items-start justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-20 box-border gap-[12px] max-w-full mq825:flex-wrap">
                 <div className="flex-1 flex flex-col items-start justify-start gap-[10px] min-w-[468px] max-w-full mq825:min-w-full">
                   <div className="self-stretch flex flex-col items-start justify-start pt-spacing-sp-4 px-0 pb-spacing-sp-2 gap-[4px]">
@@ -34,7 +101,7 @@ const Main = () => {
               </div>
             </div>
           </div>
-          <div className="w-[792px] flex flex-col items-start justify-start gap-[32px]">
+          <div className="w-[792px] flex flex-col items-start justify-start gap-[32px] m-0 max-w-full">
             <div className="self-stretch flex flex-col items-start justify-start max-w-full">
               <div className="self-stretch flex flex-row items-start justify-center pt-0 px-0 pb-spacing-sp-16 box-border max-w-full">
                 <h2 className="m-0 flex-1 relative text-inherit tracking-[0.01em] leading-[32px] font-semibold font-inherit inline-block max-w-full mq450:text-lgi mq450:leading-[26px]">
@@ -51,11 +118,17 @@ const Main = () => {
             <div className="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full text-base text-colors-text-c-text-grey-secondary1">
               <div className="self-stretch h-14 flex flex-row items-start justify-start max-w-full">
                 <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
-                  <div className="self-stretch flex-1 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue1 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        Enter your name <span className="text-red-500">*</span>
+                      </span>
+                    )}
                     <input
                       type="text"
-                      placeholder="Full name"
-                      className="self-stretch flex-1 relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none ${inputPaddingClass}`}
+                      value={inputValue1}
+                      onChange={handleInput1}
                       required
                     />
                   </div>
@@ -63,48 +136,84 @@ const Main = () => {
               </div>
               <div className="self-stretch flex flex-row items-start justify-start gap-[24px] max-w-full text-colors-text-c-text-grey-tertiary1 mq825:flex-wrap">
                 <div className="flex-1 flex flex-col items-start justify-start min-w-[250px] max-w-full">
-                  <div className="self-stretch rounded-radii-r-16 bg-brand-ghost-white overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] border-[1px] border-solid border-colors-border-c-border-grey-default mq450:flex-wrap">
+                  <div className="self-stretch  rounded-radii-r-16 bg-brand-ghost-white overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] border-[1px] border-solid border-colors-border-c-border-grey-default mq450:flex-wrap">
+                    {!isFocused2 && inputValue2 === "" && (
+                      <span className="absolute  text-colors-text-c-text-grey-tertiary1">
+                        Select an option <span className="text-red-500">*</span>
+                      </span>
+                    )}
                     <select
-                      className="flex-1 relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
+                      className={`w-full text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1  pr-4 bg-transparent focus:outline-none ${
+                        isFocused2 || inputValue2
+                          ? "text-colors-text-c-text-grey-tertiary1 "
+                          : "text-gray-400 "
+                      }`}
+                      value={inputValue2}
+                      onChange={handleInput2}
+                      onFocus={handleFocus2}
+                      onBlur={handleBlur2}
                       required
                     >
-                      <option value="">Select country code</option>
+                      <option value="" disabled></option>
                       <option value="+1">United States (+1)</option>
                       <option value="+44">United Kingdom (+44)</option>
                       <option value="+91">India (+91)</option>
                       <option value="+61">Australia (+61)</option>
                       <option value="+81">Japan (+81)</option>
                     </select>
+                    {inputValue2 === "" && !isFocused2 && (
+                      <span className="text-red-500 absolute right-4 top-1/2 transform -translate-y-1/2">
+                        *
+                      </span>
+                    )}
                   </div>
                 </div>
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[250px] max-w-full text-colors-text-c-text-grey-secondary1">
-                  <div className="self-stretch h-14 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden shrink-0 flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
+                <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue3 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        Phone Number <span className="text-red-500">*</span>
+                      </span>
+                    )}
                     <input
-                      type="tel"
-                      placeholder="Phone number"
-                      className="self-stretch flex-1 relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
+                      type="text"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none ${inputPaddingClass}`}
+                      value={inputValue3}
+                      onChange={handleInput3}
                       required
                     />
                   </div>
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-start justify-start gap-[24px] max-w-full mq825:flex-wrap">
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[250px] max-w-full">
-                  <div className="self-stretch h-14 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden shrink-0 flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
+                <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue4 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        Email <span className="text-red-500">*</span>
+                      </span>
+                    )}
                     <input
-                      type="email"
-                      placeholder="Email"
-                      className="self-stretch flex-1 relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
+                      type="text"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none ${inputPaddingClass}`}
+                      value={inputValue4}
+                      onChange={handleInput4}
                       required
                     />
                   </div>
                 </div>
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[250px] max-w-full">
-                  <div className="self-stretch h-14 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden shrink-0 flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
+                <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
+                  <div className="relative w-full flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                    {inputValue5 === "" && (
+                      <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        Confirm Email <span className="text-red-500">*</span>
+                      </span>
+                    )}
                     <input
-                      type="email"
-                      placeholder="Confirm email"
-                      className="self-stretch flex-1 relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
+                      type="text"
+                      className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none ${inputPaddingClass}`}
+                      value={inputValue5}
+                      onChange={handleInput5}
                       required
                     />
                   </div>
@@ -116,7 +225,7 @@ const Main = () => {
             </div>
           </div>
 
-          <div className="w-[792px] flex flex-col items-start justify-start gap-[32px]">
+          <div className="w-[792px] max-w-full flex flex-col items-start justify-start gap-[32px]">
             <div className="self-stretch flex flex-col items-start justify-start max-w-full">
               <div className="self-stretch flex flex-row items-start justify-center pt-0 px-0 pb-spacing-sp-16 box-border max-w-full">
                 <h2 className="m-0 flex-1 relative text-inherit tracking-[0.01em] leading-[32px] font-semibold font-inherit inline-block max-w-full mq450:text-lgi mq450:leading-[26px]">
@@ -131,46 +240,71 @@ const Main = () => {
             </div>
             <div className="self-stretch flex flex-col items-start justify-start gap-[24px] max-w-full text-base text-colors-text-c-text-grey-secondary1">
               <div className="self-stretch flex flex-row items-start justify-start gap-[24px] max-w-full mq825:flex-wrap">
-                <div className="flex-1 flex flex-col items-start justify-start min-w-[250px] max-w-full">
-                  <div className="self-stretch h-14 rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden shrink-0 flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default">
-                    <div className=" flex items-center text-colors-text-c-text-grey-tertiary1">
-                      <input
-                        type="text"
-                        className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="Enter your name"
-                        required
-                      />
-                    </div>
-                  </div>
+                <div className="relative w-96 flex items-center min-w-[250px] h-14 rounded-radii-r-16 bg-brand-ghost-white border border-solid border-colors-border-c-border-grey-default">
+                  {inputValue === "" && (
+                    <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                      Enter your name <span className="text-red-500">*</span>
+                    </span>
+                  )}
+                  <input
+                    type="text"
+                    className={`w-full h-full pr-4 text-base font-label-regular-bold text-colors-text-c-text-grey-tertiary1 bg-transparent focus:outline-none ${inputPaddingClass}`}
+                    value={inputValue}
+                    onChange={handleInput}
+                    required
+                  />
                 </div>
                 <div className="flex-1 flex flex-col items-start justify-start min-w-[250px] max-w-full">
                   <div className="self-stretch rounded-radii-r-16 bg-brand-ghost-white overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] border-[1px] border-solid border-colors-border-c-border-grey-default mq450:flex-wrap">
-                    <div className="flex-1 h-6 flex flex-row items-center justify-start gap-[4px] min-w-[53px] text-colors-text-c-text-grey-tertiary1">
+                    <div className="flex-1 h-6 flex flex-row items-center justify-start gap-[4px] min-w-[53px] text-colors-text-c-text-grey-tertiary1 relative">
+                      {!isFocused1 && selectedValue1 === "" && (
+                        <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                          Select an option{" "}
+                          <span className="text-red-500">*</span>
+                        </span>
+                      )}
                       <select
-                        className="w-full relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
+                        className={`w-full text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1  pr-4 bg-transparent focus:outline-none ${
+                          isFocused1 || selectedValue1
+                            ? "text-colors-text-c-text-grey-tertiary1 pl-4"
+                            : "text-gray-400"
+                        }`}
+                        value={selectedValue1}
+                        onChange={handleChange1}
+                        onFocus={handleFocus1}
+                        onBlur={handleBlur1}
                         required
                       >
-                        <option value="" disabled>
-                          Select an option
-                        </option>
+                        <option value="" disabled></option>
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
                         <option value="option3">Option 3</option>
                       </select>
-
-                      <div className="relative text-sm leading-[20px] font-semibold text-red-light-c-l-red-905"></div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="self-stretch flex flex-row items-start justify-start max-w-full">
-                <div className="flex-1 flex flex-col items-start justify-start max-w-full">
-                  <div className="self-stretch rounded-radii-r-16 bg-brand-ghost-white box-border overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] max-w-full border-[1px] border-solid border-colors-border-c-border-grey-default mq825:flex-wrap">
-                    <div className="flex-1 flex flex-row items-center justify-start gap-[4px] min-w-[90px] max-w-full text-colors-text-c-text-grey-tertiary1">
-                      <select className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left w-full">
-                        <option value="" disabled>
-                          Select a option
-                        </option>
+                <div className="relative flex-1 flex flex-col items-start justify-start min-w-[250px] max-w-full">
+                  <div className="self-stretch rounded-radii-r-16 bg-brand-ghost-white overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] border-[1px] border-solid border-colors-border-c-border-grey-default">
+                    <div className="flex-1 flex flex-row items-center justify-start gap-[4px] min-w-[53px] text-colors-text-c-text-grey-tertiary1">
+                      {!isFocused && selectedValue === "" && (
+                        <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                          Select an option{" "}
+                          <span className="text-red-500">*</span>
+                        </span>
+                      )}
+                      <select
+                        className={`w-full text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 ${
+                          isFocused || selectedValue !== "" ? "pl-4" : "pl-20"
+                        } pr-4 bg-transparent focus:outline-none`}
+                        value={selectedValue}
+                        onChange={handleChange}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                        required
+                      >
+                        <option value="" disabled></option>
                         <option value="option1">Option 1</option>
                         <option value="option2">Option 2</option>
                         <option value="option3">Option 3</option>
@@ -182,7 +316,7 @@ const Main = () => {
             </div>
           </div>
         </div>
-        <div className="w-96 rounded-radii-r-24 bg-brand-ghost-white box-border flex flex-col items-start justify-start min-w-[384px] max-w-full text-right text-sm text-colors-text-c-text-grey-secondary1 border-[1px] border-solid border-colors-border-c-border-grey-divider-default1 lg:flex-1 mq450:min-w-full">
+        <div className="order-2 lg:order-1 w-96 rounded-radii-r-24 bg-brand-ghost-white box-border flex flex-col items-start justify-start min-w-[384px] max-w-full text-right text-sm text-colors-text-c-text-grey-secondary1 border-[1px] border-solid border-colors-border-c-border-grey-divider-default1 lg:flex-1 mq450:min-w-full">
           <div className="self-stretch flex flex-col items-start justify-start gap-[12px] max-w-full">
             <div className="self-stretch flex flex-col items-center justify-start pt-spacing-sp-16 px-spacing-sp-16 pb-0 box-border gap-[16px] max-w-full">
               <div className="w-[352px] flex flex-col items-start justify-start pt-3 px-0 pb-0 box-border relative gap-[59px] min-h-[198px] max-w-full mq450:gap-[59px]">
@@ -276,8 +410,8 @@ const Main = () => {
                     </div>
                     <div className="flex-1 flex flex-col items-start justify-start min-w-[209px] max-w-full">
                       <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-spacing-sp-8 box-border max-w-full">
-                        <div className="flex-1 relative leading-[20px] font-semibold inline-block max-w-full">
-                          Amsterdam open boat canal cruise
+                        <div className="flex-1 relative leading-[20px] font-bold inline-block max-w-full">
+                          Amsterdam Open Boat Canal Cruise
                         </div>
                       </div>
                     </div>
@@ -360,7 +494,6 @@ const Main = () => {
                     />
                   </div>
 
-                  {/* Payment Summary Details */}
                   {isPaymentSummaryVisible && (
                     <div className="w-full py-2">
                       <div className="border-t border-dashed border-gray-200 my-2"></div>
@@ -391,21 +524,30 @@ const Main = () => {
               </div>
             </div>
           </div>
-          <div className="self-stretch flex flex-col items-start justify-start pt-spacing-sp-16 px-spacing-sp-16 pb-spacing-sp-32 gap-[32px] text-left text-lg text-colors-text-c-text-grey-primary font-label-regular-bold border-t-[1px] border-solid border-colors-border-c-border-grey-divider-default1 mq450:gap-[32px]">
-            <div className="flex justify-between w-full items-center">
+          <div className="self-stretch flex flex-col pt-spacing-sp-16 px-spacing-sp-16 pb-spacing-sp-32 gap-[32px]  text-lg text-colors-text-c-text-grey-primary font-label-regular-bold border-t-[1px] border-solid border-colors-border-c-border-grey-divider-default1 mq450:gap-[32px]">
+            <div className="flex justify-between items-start">
               <div>
-                <p className="text-gray-800 font-semibold">
-                  Total payable: $300
+                <p className="text-gray-800 font-semibold text-left">
+                  Total payable:
                 </p>
-                <p className="text-sm text-gray-600">
-                  You will be charged in AED
-                </p>
+                <div className="text-green-600 w-[8.5rem] text-sm px-2 my-2 bg-green-100 rounded-lg flex items-center gap-2">
+                  <img
+                    src="/piggybank.svg"
+                    alt="Piggybank"
+                    className="h-4 w-auto" // Adjusted for automatic width based on the height
+                  />
+                  <span>You saved $40</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <p className="text-sm text-gray-600">
+                    You will be charged in AED
+                  </p>
+                  <img className="h-6 w-6 p-1" alt="" src="/info.svg" />
+                </div>
               </div>
-              <div className="text-green-600 text-sm px-2 bg-green-300 rounded-lg">
-                <span>You saved $40</span>
-              </div>
+              <span className="text-right font-bold">$300</span>
             </div>
-            <div className="text-xs text-gray-600 ">
+            <div className="text-xs text-gray-600 text-left">
               By clicking "confirm & pay", you agree to{" "}
               <a href="/" className="text-blue-600 hover:underline">
                 Tickete's general terms and conditions{" "}

@@ -56,7 +56,7 @@ const Payment = () => {
                     <div className="self-stretch flex-1 flex flex-row items-center justify-start gap-[4px] max-w-full">
                       <input
                         className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="Name on card"
+                        placeholder="Name on card *"
                         required
                       />
                     </div>
@@ -67,7 +67,7 @@ const Payment = () => {
                     <div className="flex-1 flex flex-row items-center justify-start gap-[4px] min-w-[108px] min-h-[24px]">
                       <input
                         className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="Card number"
+                        placeholder="Card number *"
                       />
                     </div>
                   </div>
@@ -79,14 +79,7 @@ const Payment = () => {
                     <div className="self-stretch flex-1 flex flex-row items-center justify-start gap-[4px] max-w-full">
                       <input
                         className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="Expiry date (MM/YY)"
-                      />
-                    </div>
-                    <div className="hidden flex-row items-center justify-center p-0.5">
-                      <img
-                        className="h-5 w-5 relative"
-                        alt=""
-                        src="/diamond.svg"
+                        placeholder="Expiry date (MM/YY) *"
                       />
                     </div>
                   </div>
@@ -96,38 +89,46 @@ const Payment = () => {
                     <div className="self-stretch flex-1 flex flex-row items-center justify-start gap-[4px] max-w-full">
                       <input
                         className="relative text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1 text-left"
-                        placeholder="CVV/CVC"
+                        placeholder="CVV/CVC *"
                       />
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="self-stretch flex flex-col items-start justify-start pt-spacing-sp-16 px-spacing-sp-16 pb-spacing-sp-32 gap-[32px] text-left text-lg text-colors-text-c-text-grey-primary font-label-regular-bold border-t-[1px] border-solid border-colors-border-c-border-grey-divider-default1 mq450:gap-[32px]">
-                <div className="flex justify-between w-full items-center">
+              <div className="self-stretch flex flex-col  items-start justify-start pt-spacing-sp-16 px-spacing-sp-16 pb-spacing-sp-32 gap-[32px] text-left text-lg text-colors-text-c-text-grey-primary font-label-regular-bold border-t-[1px] border-solid border-colors-border-c-border-grey-divider-default1 mq450:gap-[32px]">
+                <div className="flex justify-between w-full items-start">
                   <div>
                     <p className="text-gray-800 font-semibold">
                       Total payable: $300
                     </p>
-                    <p className="text-sm text-gray-600">
-                      You will be charged in AED
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm text-gray-600">
+                        You will be charged in AED
+                      </p>
+                      <img className="h-6 w-6 p-1" alt="" src="/info.svg" />
+                    </div>
                   </div>
-                  <div className="text-green-600 text-sm px-2 bg-green-300 rounded-lg">
+                  <div className="text-green-600 text-sm px-2 bg-green-100 rounded-lg flex items-center gap-2">
+                    <img
+                      src="/piggybank.svg"
+                      alt="Piggybank"
+                      className="h-4 w-4"
+                    />{" "}
+                    {/* Adjust the h-4 w-4 as needed */}
                     <span>You saved $40</span>
                   </div>
                 </div>
-                <div className="text-xs text-gray-600 my-2">
+                <div className="text-xs text-gray-600 my-1">
                   By clicking "confirm & pay", you agree to{" "}
                   <a href="/" className="text-blue-600 hover:underline">
                     Tickete's general terms and conditions{" "}
                   </a>
-                  and
+                  and{" "}
                   <a href="/" className="text-blue-600 hover:underline">
-                    {" "}
                     cancellation policy.
                   </a>
                 </div>
-                <button className="cursor-pointer font-bold text-white text-lgi   [border:none] py-spacing-sp-16 px-spacing-sp-20 bg-black  rounded-radii-r-16 overflow-hidden flex flex-row items-center justify-center gap-[12px]">
+                <button className="cursor-pointer font-bold text-white text-lg [border:none] py-spacing-sp-16 px-spacing-sp-20 bg-black rounded-radii-r-16 overflow-hidden flex flex-row items-center justify-center gap-[12px]">
                   <img
                     className="h-[22px] w-[22px] relative"
                     alt=""
