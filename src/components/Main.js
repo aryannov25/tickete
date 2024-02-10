@@ -161,11 +161,6 @@ const Main = () => {
                       <option value="+61">Australia (+61)</option>
                       <option value="+81">Japan (+81)</option>
                     </select>
-                    {inputValue2 === "" && !isFocused2 && (
-                      <span className="text-red-500 absolute right-4 top-1/2 transform -translate-y-1/2">
-                        *
-                      </span>
-                    )}
                   </div>
                 </div>
                 <div className="self-stretch flex-1 flex flex-col items-start justify-start max-w-full">
@@ -258,7 +253,7 @@ const Main = () => {
                   <div className="self-stretch rounded-radii-r-16 bg-brand-ghost-white overflow-hidden flex flex-row items-center justify-start py-spacing-sp-16 pr-spacing-sp-16 pl-spacing-sp-16 gap-[10px] border-[1px] border-solid border-colors-border-c-border-grey-default mq450:flex-wrap">
                     <div className="flex-1 h-6 flex flex-row items-center justify-start gap-[4px] min-w-[53px] text-colors-text-c-text-grey-tertiary1 relative">
                       {!isFocused1 && selectedValue1 === "" && (
-                        <span className="absolute left-4 text-colors-text-c-text-grey-tertiary1">
+                        <span className="absolute  text-colors-text-c-text-grey-tertiary1">
                           Select an option{" "}
                           <span className="text-red-500">*</span>
                         </span>
@@ -266,8 +261,8 @@ const Main = () => {
                       <select
                         className={`w-full text-base leading-[22px] font-label-regular-bold text-colors-text-c-text-grey-tertiary1  pr-4 bg-transparent focus:outline-none ${
                           isFocused1 || selectedValue1
-                            ? "text-colors-text-c-text-grey-tertiary1 pl-4"
-                            : "text-gray-400"
+                            ? "text-colors-text-c-text-grey-tertiary1 pl-0"
+                            : "text-gray-400 pl-4"
                         }`}
                         value={selectedValue1}
                         onChange={handleChange1}

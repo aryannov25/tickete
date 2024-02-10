@@ -160,7 +160,6 @@ const Payment = () => {
                       alt="Piggybank"
                       className="h-4 w-4"
                     />{" "}
-                    {/* Adjust the h-4 w-4 as needed */}
                     <span>You saved $40</span>
                   </div>
                 </div>
